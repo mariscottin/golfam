@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import ProfileCard from './ProfileCard';
+import ScorecardsModule from './ScorecardsModule';
 import './Main.css';
 
 
@@ -22,7 +23,9 @@ const MyProfile = ({currentUser: user}) => {
                     <div className="tab-pane fade show active" id="nav-miPerfil" role="tabpanel" aria-labelledby="nav-miPerfil-tab">
                         <ProfileCard user={user}/>
                     </div>
-                    <div className="tab-pane fade" id="nav-misTarjetas" role="tabpanel" aria-labelledby="nav-misTarjetas-tab">Mis Tarjetas</div>
+                    <div className="tab-pane fade" id="nav-misTarjetas" role="tabpanel" aria-labelledby="nav-misTarjetas-tab">
+                        <ScorecardsModule user={user}/>
+                    </div>
                     <div className="tab-pane fade" id="miCalendario" role="tabpanel" aria-labelledby="nav-miCalendario-tab">Mi Calendario</div>
                     <div className="tab-pane fade" id="misConsumos" role="tabpanel" aria-labelledby="nav-misConsumos-tab">Mis Consumos</div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import ProfileCard from './ProfileCard';
+import ScorecardsModule from './ScorecardsModule'
 import './Main.css';
 
 const Profile = ({ match }) => {
@@ -76,7 +77,9 @@ const Profile = ({ match }) => {
                     <div className="tab-pane fade show active" id="nav-Perfil" role="tabpanel" aria-labelledby="nav-Perfil-tab">
                         <ProfileCard user={user} />
                     </div>
-                    <div className="tab-pane fade" id="nav-Tarjetas" role="tabpanel" aria-labelledby="nav-Tarjetas-tab">Tarjetas</div>
+                    <div className="tab-pane fade" id="nav-Tarjetas" role="tabpanel" aria-labelledby="nav-Tarjetas-tab">
+                        <ScorecardsModule user={user}/>
+                    </div>
                     <div className="tab-pane fade" id="Calendario" role="tabpanel" aria-labelledby="nav-Calendario-tab">Calendario</div>
                 </div>
             </div>
