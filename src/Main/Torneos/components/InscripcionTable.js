@@ -36,6 +36,13 @@ const InscripcionTable = ({ tournament }) => {
                             <td>Disponible</td>
                             <td>Disponible</td>
                         </tr>
+                        <tr>
+                            <th scope="row">8:04</th>
+                            <td>Disponible</td>
+                            <td>Disponible</td>
+                            <td>Disponible</td>
+                            <td>Disponible</td>
+                        </tr>
                     </tbody>
             </table>
         </div>
