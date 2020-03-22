@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './components/frontend/home/Home';
-import Register from './components/frontend/home/Register';
-import Main from './components/frontend/main/Main';
-import MyProfile from './components/frontend/main/MyProfile';
-import Profile from './components/frontend/main/Profile';
-
-import './App.css';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import Home from './Landing/pages/Home';
+import Register from './Landing/pages/Register';
+import Inicio from './Main/Inicio/pages/Inicio';
+import MyProfile from './Main/Profile/UserProfile/pages/MyProfile';
+import UserProfile from './Main/Profile/UserProfile/pages/UserProfile';
+import UserScorecards from './Main/Profile/Scorecards/pages/UserScorecards';
+import Torneos from './Main/Torneos/pages/Torneos';
+import Inscripcion from './Main/Torneos/pages/Inscripcion';
+import Resultados from './Main/Torneos/pages/Resultados';
 
 const App = ()=> {
 
   //Once authenticated, pass the current user to profile
-  const [currentUser, setCurrentUser] = useState({
+  const [currentUser] = useState({
     id: 123456,
     name: "Nicolas",
     lastName: "Mariscotti",
@@ -26,7 +28,7 @@ const App = ()=> {
 })
 
   //STATIC DATA --> THIS NEEDS TO BE FETCHED FROM DB
-  const [users, setUsers] = useState([
+  const [users] = useState([
     {
         id: 654321,
         name: "Guillermo",
@@ -68,15 +70,50 @@ const App = ()=> {
     }
 ]);
 
+
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/" exact component={Home} /> 
-          <Route path="/registrarme" component={Register} />
-          <Route path="/inicio" render={(props) => <Main {...props} currentUser={currentUser}/>} />
-          <Route path="/miperfil" render={(props) => <MyProfile {...props} currentUser={currentUser}/>} />
-          <Route path="/perfil/:id" component={Profile} />
+
+          <Route path="/" exact>
+            <Home />
+          </Route>
+
+          <Route path="/registrarme">
+            <Register />
+          </Route>
+
+          <Route path="/inicio">
+            <Inicio currentUser={currentUser} />
+          </Route>
+
+          <Route path="/miperfil">
+            <MyProfile currentUser={currentUser} />
+          </Route>
+
+          
+          <Route path="/perfil/:id" exact>
+            <UserProfile />
+          </Route>
+
+          <Route path="/perfil/:id/tarjetas" exact>
+            <UserScorecards />
+          </Route>
+
+          <Route path="/torneos" exact>
+            <Torneos />
+          </Route>
+
+          <Route path="/torneos/resultados">
+            <Resultados />
+          </Route>
+
+          <Route path="/torneos/inscripcion/:id">
+            <Inscripcion />
+          </Route>
+
+          <Redirect to="/" />
         </Switch>
       </div>
     </Router>
