@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import AddPost from '../components/AddPost';
 import Posts from '../components/Posts';
-import Navbar from '../../Navbar';
 
 import '../Inicio.css';
 
@@ -109,7 +108,6 @@ const Inicio = (props)=> {
     }
     return(
         <div>
-            <Navbar />
             <div className="Main-body">
                 <AddPost handleAddPost={handleAddPost} currentUser={props.currentUser}/>
                 <Posts posts={posts} handleLike={handleLike} currentUser={props.currentUser}/>

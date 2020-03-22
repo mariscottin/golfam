@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navbar from '../components/Navbar';
 import Footer from '../components/HomeFooter';
 import RegisterForm from '../components/RegisterForm';
 
@@ -9,8 +8,6 @@ class Register extends Component {
     render() {
         return (
             <div className="register-main">
-                <Navbar />
-                <br/>
                 <div className="container App-register">
                     <RegisterForm />
                 </div>

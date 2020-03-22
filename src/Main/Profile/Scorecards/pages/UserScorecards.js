@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ScorecardsModule from '../components/ScorecardsModule';
-import Navbar from '../../../Navbar';
 import NavTabs from '../../../shared/NavTabs/NavTabs';
 import Tab from '../../../shared/NavTabs/Tab';
 
@@ -20,6 +19,8 @@ const DUMMY_SCORECARDS = [
         id: 'sc_2',
         user: 13243546,
         club: 'Club Nautico San Isidro',
+        torneo: 'Sweepstake',
+        modalidad: 'Medal Play',
         score: [5, 3, 4, 5, 5, 5, 3, 2, 4, 4, 4, 5, 3, 4, 3, 5, 3, 4],
         position: 2,
         date: '14/02/2020'
@@ -28,6 +29,8 @@ const DUMMY_SCORECARDS = [
         id: 'sc_3',
         user: 123456,
         club: 'Club Nautico San Isidro',
+        torneo: 'Sweepstake',
+        modalidad: 'Medal Play',
         score: [5, 3, 4, 5, 5, 5, 3, 2, 4, 4, 4, 5, 3, 4, 3, 5, 3, 4],
         position: 2,
         date: '14/02/2020'
@@ -35,6 +38,19 @@ const DUMMY_SCORECARDS = [
 ]
 
 const DUMMY_USERS = [
+    {
+        id: 123456,
+        name: "Nicolas",
+        lastName: "Mariscotti",
+        matricula: 113113,
+        club: "Club Nautico San Isidro",
+        age: 26,
+        handicap: 5.9,
+        country: "Argentina",
+        profileImg: 'https://imagizer.imageshack.com/img921/627/FLY9pC.jpg',
+        followers: 12932,
+        following: 1993
+    },
     {
         id: 654321,
         name: "Guillermo",
@@ -76,20 +92,28 @@ const DUMMY_USERS = [
     }
 ]
 
-const UserScorecards = () => {
+const UserScorecards = ({ currentUser }) => {
     const userId = +useParams().id;
     const loadedScorecards = DUMMY_SCORECARDS.filter(scorecard => scorecard.user === userId);
     const loadedUser = DUMMY_USERS.filter(user => user.id === userId);
 
     return(
         <div>
-            <Navbar />
             <div className="Main-body">
-                <NavTabs>
-                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'}/>
-                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} active/>
-                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'}/>
+            {currentUser.id === userId ?
+                 <NavTabs>
+                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} />
+                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} active />
+                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
+                    <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
                 </NavTabs>
+                :
+                <NavTabs>
+                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} />
+                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} active/>
+                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
+                </NavTabs>
+                }
                 <div className="tab-content" id="nav-tabContent">
                     <div className="tab-pane fade show active">
                         <ScorecardsModule scorecards={loadedScorecards} user={loadedUser[0]}/>

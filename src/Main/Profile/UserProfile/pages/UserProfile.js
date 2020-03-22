@@ -1,11 +1,23 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Navbar from '../../../Navbar';
 import NavTabs from '../../../shared/NavTabs/NavTabs';
 import Tab from '../../../shared/NavTabs/Tab';
 import ProfileCard from '../components/ProfileCard';
 
 const DUMMY_USERS = [
+    {
+        id: 123456,
+        name: "Nicolas",
+        lastName: "Mariscotti",
+        matricula: 113113,
+        club: "Club Nautico San Isidro",
+        age: 26,
+        handicap: 5.9,
+        country: "Argentina",
+        profileImg: 'https://imagizer.imageshack.com/img921/627/FLY9pC.jpg',
+        followers: 12932,
+        following: 1993
+    },
     {
         id: 654321,
         name: "Guillermo",
@@ -45,20 +57,31 @@ const DUMMY_USERS = [
         followers: 229,
         following: 596
     },
+
 ]
 
-const UserProfile = () => {
+const UserProfile = ({ currentUser }) => {
     const userId = +useParams().id;
     const loadedUser = DUMMY_USERS.filter(item => item.id === userId);
+    console.log("currentUser " + currentUser.id)
+    console.log("userId" + userId)
     return (
         <div>
-            <Navbar />
             <div className="Main-body">
+                {currentUser.id === userId ?
+                 <NavTabs>
+                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} active />
+                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} />
+                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
+                    <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
+                </NavTabs>
+                :
                 <NavTabs>
                     <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} active />
                     <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} />
                     <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
                 </NavTabs>
+                }
                 <div className="tab-content" id="nav-tabContent">
                     <div className="tab-pane fade show active">
                         <ProfileCard user={loadedUser[0]} />

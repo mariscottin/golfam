@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import InscripcionTable from '../components/InscripcionTable';
-import Navbar from '../../Navbar';
 
 import './Inscripcion.css'
 //STATIC TOURNAMENTS DATA!! FETCH FROM DB!!
@@ -56,7 +55,6 @@ const Inscripcion = () => {
     
     return(
         <div>
-            <Navbar />
             <div className="Main-body">
                 <div className="back-container">
                     <Link to="/torneos" className="back-link">Volver al Fixture</Link>

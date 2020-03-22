@@ -3,12 +3,14 @@ import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag, faGolfBall, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
+import './Navbar.css';
 
 const Navbar = ()=> {
     return(
         <div className="main-navbar">
             <nav className="navbar fixed-top navbar-expand-lg navbar-light">
                 <span className="navbar-brand mb-0 h1"><NavLink to="/inicio">GOLFAM</NavLink></span>
+
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,7 +23,7 @@ const Navbar = ()=> {
                             <NavLink to="/torneos" className="nav-link"><FontAwesomeIcon className="navbar-icon" icon={faGolfBall} /> Torneos</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/miperfil" exact className="nav-link"><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi perfil</NavLink>
+                            <NavLink to={`/perfil/123456`} exact className="nav-link"><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi perfil</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/" exact className="nav-link"><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Salir</NavLink>

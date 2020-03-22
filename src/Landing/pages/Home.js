@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import HomeHeader from '../components/HomeHeader';
 import HomeBody from '../components/HomeBody';
 import HomeFooter from '../components/HomeFooter';
@@ -10,7 +9,6 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar />
             <HomeHeader />
             <HomeBody />
             <HomeFooter />

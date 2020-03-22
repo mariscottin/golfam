@@ -1,6 +1,5 @@
 import React from 'react';
 import Leaderboards from '../components/Leaderboards';
-import Navbar from '../../Navbar';
 import NavTabs from '../../shared/NavTabs/NavTabs';
 import Tab from '../../shared/NavTabs/Tab';
 
@@ -54,7 +53,6 @@ const DUMMY_TOURNAMENTS =
 const Resultados = () => {
     return(
         <div>
-            <Navbar />
             <div className="Main-body">
                 <NavTabs>
                     <Tab to={`/torneos`} title='Fixture' />
