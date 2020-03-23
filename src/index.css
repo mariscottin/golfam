@@ -1,3 +1,4 @@
+
 body {
   background-color: #e4e4e4;
   font-size: 100%;
@@ -5,4 +6,8 @@ body {
 }
 .Main-body{
   padding-top: 70px;
+}
+
+.center{
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import AddPost from '../components/AddPost';
 import Posts from '../components/Posts';
+import InicioHeader from '../components/InicioHeader';
 
 import '../Inicio.css';
 
@@ -109,6 +110,7 @@ const Inicio = (props)=> {
     return(
         <div>
             <div className="Main-body">
+                <InicioHeader />
                 <AddPost handleAddPost={handleAddPost} currentUser={props.currentUser}/>
                 <Posts posts={posts} handleLike={handleLike} currentUser={props.currentUser}/>
             </div>
