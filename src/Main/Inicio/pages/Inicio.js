@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AddPost from '../components/AddPost';
 import Posts from '../components/Posts';
 import InicioHeader from '../components/InicioHeader';
@@ -7,6 +7,38 @@ import '../Inicio.css';
 
 
 const Inicio = (props)=> {
+ 
+
+    const API_URL = 
+    'http://api.openweathermap.org/data/2.5/weather?lat=-34.4530141&lon=-58.507858&lang=es&units=metric&APPID=60b9e5dce86db6f6f64e9a05c9f861d7'
+    
+    const[weather, setWeather] = useState({
+        name: '',
+        temperature: null,
+        wind: null,
+        description: '',
+        icon: '',
+        isWeather: false
+    });
+
+    useEffect(()=> {
+        loadData();
+    }, [])
+
+    const loadData = async () => {
+        const response = await fetch(API_URL)
+        const data = await response.json();
+        setWeather({
+            name: data.name,
+            temperature: data.main.temp,
+            wind: data.wind.speed,
+            description: data.weather[0].description,
+            icon: data.weather[0].icon,
+            isWeather: true
+        });
+        console.log(data);
+    }
+
 
     const [posts, setPosts] = useState(
         [
@@ -102,7 +134,7 @@ const Inicio = (props)=> {
         posts.forEach((post, i) => {
             if (post.id === id) {
                 let newArr = [...posts];
-                newArr[i].likes = newArr[i].likes + num
+                newArr[i].likes = newArr[i].likes + num;
                 setPosts(newArr);
             }
         })
@@ -110,7 +142,7 @@ const Inicio = (props)=> {
     return(
         <div>
             <div className="Main-body">
-                <InicioHeader />
+                <InicioHeader weather={weather} />
                 <AddPost handleAddPost={handleAddPost} currentUser={props.currentUser}/>
                 <Posts posts={posts} handleLike={handleLike} currentUser={props.currentUser}/>
             </div>

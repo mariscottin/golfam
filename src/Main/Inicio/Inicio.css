@@ -1,72 +1,4 @@
-/*Add post component*/
-.Main-add-post{
-    display: flex;
-    justify-content: center;
-}
 
-.form-inline .form-control{
-    width: 500px !important;
-}
-
-.profile-form-img{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    margin-bottom: 3px;
-    border-radius: 100%;
-    background-color: rgb(163, 163, 163);
-}
-
-.Main-add-post .textarea{
-    resize: none;
-    transition: 0.3s all;
-}
-
-.textarea-position{
-    position: relative;
-}
-
-.close-post-icon{
-    position: absolute;
-    right: 10px;
-    top: 2px;
-    color: rgba(121, 121, 121, 0.774);
-}
-
-.close-post-icon:hover{
-    cursor: pointer;
-    color: rgb(121, 121, 121)
-}
-
-@media (max-width: 771px){
-    .Main-add-post{
-        width: 80%;
-        margin: auto;
-    }
-
-    .form-inline .form-control{
-        width: 300px !important;
-    }
-    .mr-sm-2{
-        margin-right: 0.5rem !important;
-    }
-}
-
-@media (max-width: 580px){
-    .form-inline .form-control{
-        margin-left:0;
-    }
-    .profile-form-img{
-        margin-right: 2px;
-    }
-
-    .add-post-btn{
-        margin-left: 2px;
-    }
-}
-
-
-/*Posts component*/
 .Main-all-posts{
     height: 500px;
     width: 70%;
@@ -89,7 +21,7 @@
 
 }
 
-@media(max-width: 767px) {
+@media(max-width: 991px) {
     .Main-all-posts{
         width: 100%;
     }
@@ -148,6 +80,7 @@
     height: 40px;
     font-size: 14px;
     border-radius: 10px;
+    width: 80%;
 }
 .Main-post .post-footer .leave-comment .fa-arrow-alt-circle-right{
     color: #5a945ad3;

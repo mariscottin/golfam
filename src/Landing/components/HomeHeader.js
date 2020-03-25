@@ -1,20 +1,20 @@
 import React from 'react';
 import Login from './Login';
-import logo from '../../assets/img/logo.png'
+import Logo from '../../assets/img/logo-2.png'
 
 import '../Landing.css';
 
-const HomeHeader = () => {
+const HomeHeader = props => {
     return (
         <div>
             <header className="App-header">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-                            <img src={logo} className="App-logo" alt="logo" />
+                            <img src={Logo} className="App-logo" alt="logo" />
                         </div>
                         <div className="col-lg-6">
-                            <Login />
+                            <Login loggedIn={props.loggedIn}/>
                         </div>
 
                     </div>

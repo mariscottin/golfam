@@ -5,11 +5,11 @@ import HomeFooter from '../components/HomeFooter';
 
 import '../Landing.css';
 
-const Home = () => {
+const Home = props => {
 
     return (
         <div>
-            <HomeHeader />
+            <HomeHeader loggedIn={props.loggedIn}/>
             <HomeBody />
             <HomeFooter />
         </div>

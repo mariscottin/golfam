@@ -1,20 +1,37 @@
 import React from 'react';
-import Logo from '../../../assets/img/cnsi-logo.png';
+import ReactLoading from 'react-loading';
 
+import Logo from '../../../assets/img/cnsi-logo.png';
+import WeatherWidget from './WeatherWidget';
 import './InicioHeader.css';
 
-const InicioHeader = () => {
+const InicioHeader = ({ weather }) => {
+
     return(
         <div className="inicio-header">
-            <div className="logo-container">
-                <img src={Logo} alt='Golfam-logo' />
-            </div>
-            <div className="estado-cancha-container">
-                <h5>Estado de la cancha:</h5>
-                <h4 className="estado-cancha abierta">Abierta</h4>
+            <div className="logo-status-container">
+                <div className="logo-container">
+                    <img src={Logo} alt='Golfam-logo' />
+                </div>
+                <div className="estado-cancha-container">
+                    <h5>Estado de la cancha: <span className="estado-cancha abierta"> Abierta</span></h5>
+                </div>
             </div>
             <div className="weather-container">
-                <h5>Clima:</h5>
+                {
+                    // weather.name==='' || weather.icon=== '' || weather.temperature === null || weather.description==='' || weather.wind === null
+                    !weather.isWeather
+                    ? 
+                    <ReactLoading className="weather-loading" type={'spin'} color={'#5a945a'} height={'30%'} width={'30%'}/>
+                    :
+                    <WeatherWidget
+                        title={weather.name}
+                        icon={weather.icon}
+                        temperature={weather.temperature}
+                        description={weather.description}
+                        wind={weather.wind}
+                    />
+                }
             </div>
         </div>
     )
