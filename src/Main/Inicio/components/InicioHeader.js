@@ -22,7 +22,7 @@ const InicioHeader = ({ weather }) => {
                     // weather.name==='' || weather.icon=== '' || weather.temperature === null || weather.description==='' || weather.wind === null
                     !weather.isWeather
                     ? 
-                    <ReactLoading className="weather-loading" type={'spin'} color={'#5a945a'} height={'30%'} width={'30%'}/>
+                    <ReactLoading className="weather-loading" type={'spin'} color={'#5a945a'} height={'20%'} width={'20%'}/>
                     :
                     <WeatherWidget
                         title={weather.name}

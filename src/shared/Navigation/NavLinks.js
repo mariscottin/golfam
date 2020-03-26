@@ -9,7 +9,7 @@ import './NavLinks.css';
 const NavLinks = props => {
     return (
         <ul className= "nav-links">
-            <li>
+            <li className="first-li">
                 <NavLink to="/inicio"><FontAwesomeIcon className="navbar-icon" icon={faFlag} /> Inicio</NavLink>
             </li>
             <li>

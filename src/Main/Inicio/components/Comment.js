@@ -4,6 +4,7 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import '../Inicio.css';
+import './Comment.css';
 
 
 const Comment = ({comment})=> {

@@ -1,97 +1,12 @@
 
-.Main-all-posts{
-    height: 500px;
-    width: 70%;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.Main-post{
-    height: auto;
-    width: 80%;
-    margin: auto;
-    background-color: white;
-    border: 1px solid #dddfe2;
-    border-radius: 3px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 15px;
-    text-align: left;
-
-}
 
 @media(max-width: 991px) {
-    .Main-all-posts{
-        width: 100%;
-    }
     .Main-post{
         width: 80%;
     }
 }
 
-.Main-post .post-profile-pic{
-    width: 45px;
-    height: 45px;
-    border-radius: 100%;
-    margin-right: 8px;
-}
 
-.Main-post .post-date-time{
-    font-size: 12px;
-    margin-left: 53px;
-    margin-top: -15px;
-}
-
-.Main-post .likes-comments{
-    font-size: 14px;
-    color: #5a945ac4;
-}
-
-.Main-post .likes-comments .likes{
-    margin-right: 10px;
-    margin-left: 6px;
-}
-
-.Main-post .likes-comments .likes:hover, .Main-post .likes-comments .comments:hover{
-    cursor: pointer;
-    color: #5a945a;
-}
-
-.Main-post .post-footer .like{
-    color: rgba(94, 94, 94, 0.938);
-    width: 100px;
-    text-align: center;
-    margin: 0;
-    padding: 8px 2px 8px 2px;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: all 0.3s;
-}
-
-.Main-post .post-footer .like:hover{
-    cursor: pointer;
-    background-color: #7f977f13;
-    color: #4c7c4c;
-}
-
-.Main-post .post-footer .leave-comment textarea{
-    resize: none;
-    height: 40px;
-    font-size: 14px;
-    border-radius: 10px;
-    width: 80%;
-}
-.Main-post .post-footer .leave-comment .fa-arrow-alt-circle-right{
-    color: #5a945ad3;
-    font-size: 2rem;
-    margin-left: 0;
-    cursor: pointer;
-}
-
-.Main-post .post-footer .leave-comment .fa-arrow-alt-circle-right:hover{
-    color: #5a945a;
-}
 
 /*Comments component*/
 .Main-comments{

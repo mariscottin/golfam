@@ -35,7 +35,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <MainNavigation currentUser={currentUser}/>
+        <MainNavigation currentUser={currentUser} />
         <main>
           <Switch>
               <Route path="/" exact>

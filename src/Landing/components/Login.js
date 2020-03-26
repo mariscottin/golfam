@@ -76,8 +76,7 @@ const Login = props => {
         setPassword(+event.target.value);
     }
     
-    const onSubmitHandler = event => {
-        event.preventDefault();
+    const onSubmitHandler = () => {
         const user = DUMMY_USERS.filter(user => user.matricula === matricula);
         if(!user[0]) {
             alert('Usuario no registrado. Regístrese para continuar');
@@ -95,7 +94,7 @@ const Login = props => {
         <div className="home-main">
             <h2>Iniciar Sesión</h2>
             <hr />
-            <form className="login-form" onSubmit={onSubmitHandler}>
+            <form className="login-form">
                 <div className="form-group">
                     <label htmlFor="login-matricula">Matrícula:</label>
                     <input type="text" className="form-control" id="login-matricula" placeholder="Ingrese su matrícula" onChange={matriculaInputHandler}/>
@@ -104,7 +103,7 @@ const Login = props => {
                     <label htmlFor="login-password">Contraseña:</label>
                     <input type="password" className="form-control" id="login-password" placeholder="Ingrese su contraseña" onChange={passwordInputHandler}/>
                 </div>
-                <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+                <Link to="/inicio" className="btn btn-primary" onClick={onSubmitHandler}>Iniciar Sesión</Link>
                 <span className="register-span">¿Todavía no te registraste? <Link to="/registrarme">¡Registrate!</Link></span>
             </form>
         </div>

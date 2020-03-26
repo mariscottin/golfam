@@ -1,0 +1,13 @@
+.posts__container{
+    height: 500px;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 991px) {
+    .posts__container{
+        width: 80%;
+    }
+}

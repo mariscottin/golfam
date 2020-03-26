@@ -11,11 +11,17 @@
   }
   
   .nav-links li {
-    margin: 1rem;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .nav-links .first-li {
+    border-top: 1px solid rgb(205, 205, 205);
   }
   
   .nav-links a {
-    border: 1px solid transparent;
     color: #292929;
     text-decoration: none;
     padding: 0.5rem;
@@ -53,8 +59,16 @@
   
     .nav-links li {
       margin: 0 0.5rem;
+      border-bottom: none;
+      padding: 0;
+      text-align: left;
+      width: auto;
     }
   
+    .nav-links .first-li {
+      border-top: none;
+    }
+
     .nav-links a {
       color: #292929;
       text-decoration: none;

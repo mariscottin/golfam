@@ -112,6 +112,24 @@ const Inicio = (props)=> {
                 likes: 1,
                 comments: [],
                 date: '27/02/2020 - 15:14'
+            },
+            {
+                id: 3,
+                user: {
+                    id: 123456,
+                    name: "Nicolas",
+                    lastName: "Mariscotti",
+                    matricula: 113113,
+                    club: "Club Nautico San Isidro",
+                    age: 26,
+                    handicap: '5.9',
+                    country: "Argentina",
+                    profileImg: 'https://imagizer.imageshack.com/img921/627/FLY9pC.jpg'
+                },
+                body: 'Toy como para ir a jugar a alguna cancha copada. Alguno conoce alguna económica y que esté buena? Graciela',
+                likes: 63,
+                comments: [],
+                date: '24/02/2020 - 11:50'
             }
         ]
     );

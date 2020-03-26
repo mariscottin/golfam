@@ -1,12 +1,12 @@
 import React from 'react';
 import Post from './Post';
 
-import '../Inicio.css';
+import './Posts.css';
 
 
 const Posts = ({posts, handleLike, currentUser})=> {
     return(
-        <div className="Main-all-posts">
+        <div className="posts__container">
             {posts.map(post =>{
                 return(
                     <Post post={post} key={post.id} handleLike={handleLike} currentUser={currentUser}/>
