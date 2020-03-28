@@ -29,6 +29,7 @@
     flex-direction: column;
     margin-right: 18px;
     margin-left: 18px;
+    text-align: center;
 }
 
 .weather-widget__desc{
@@ -45,6 +46,7 @@
 
     .weather-widget__location h5{
         font-size: 0.85rem;
+        margin-bottom: -8px;
     }
     .weather-widget__row{
         justify-content: center;
@@ -56,9 +58,11 @@
 
     .weather-widget__desc{
         font-size: 0.7rem;
+        margin-top: -12px;
     }
 
     .weather-widget__temp{
         font-size: 1.4rem;
+        margin-left: -6px;
     }
 }

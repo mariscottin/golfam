@@ -4,6 +4,8 @@ import NavTabs from '../../../shared/NavTabs/NavTabs';
 import Tab from '../../../shared/NavTabs/Tab';
 import ProfileCard from '../components/ProfileCard';
 
+import './UserProfile.css';
+
 const DUMMY_USERS = [
     {
         id: 123456,
@@ -66,26 +68,26 @@ const UserProfile = ({ currentUser }) => {
     console.log("currentUser " + currentUser.id)
     console.log("userId" + userId)
     return (
-        <div>
-            <div className="Main-body">
+        <div className="user-profile__container">
+            <div className="user-profile__navbar">
                 {currentUser.id === userId ?
-                 <NavTabs>
-                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} active />
-                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
-                </NavTabs>
-                :
-                <NavTabs>
-                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} active />
-                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
-                </NavTabs>
+                    <NavTabs>
+                        <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} active />
+                        <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} />
+                        <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
+                        <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
+                    </NavTabs>
+                    :
+                    <NavTabs>
+                        <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} active />
+                        <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} />
+                        <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
+                    </NavTabs>
                 }
-                <div className="tab-content" id="nav-tabContent">
-                    <div className="tab-pane fade show active">
-                        <ProfileCard user={loadedUser[0]} />
-                    </div>
+            </div>
+            <div className="tab-content" id="nav-tabContent">
+                <div className="tab-pane fade show active">
+                    <ProfileCard user={loadedUser[0]} />
                 </div>
             </div>
         </div>

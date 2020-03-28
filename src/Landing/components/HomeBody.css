@@ -1,0 +1,49 @@
+ .App-body {
+    background-color: #f7f7f7;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: rgb(66, 66, 66);
+  }
+  
+  .carousel{
+    padding-bottom: 80px;
+    padding-top: 30px;
+  }
+  
+  .center-body{
+    justify-content: center;
+  }
+  .main-body-slide h2{
+    padding-top: 20px;
+  }
+  
+  .main-body-slide h6{
+    padding-top: 30px;
+    line-height: 25px;
+  }
+  
+  .slide-img{
+    height: 50vmin;
+    pointer-events: none;
+  }
+  
+  .carousel-indicators{
+    padding-top: 100px;
+  }
+  .carousel-indicators li{
+    background-color: rgb(92, 92, 92);  
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon{
+    display: none;
+  }
+  
+  @media(max-width: 991px){
+    .App-body h6{
+      padding-top: 10px;
+      padding-bottom: 12px;
+    }
+  }

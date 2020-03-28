@@ -85,7 +85,7 @@ const Post = ({ post, handleLike }) => {
                 {
                     post.comments.length > 0 &&
                     comments &&
-                    <div className="Main-comments">
+                    <div className="comments__container">
                         {
                             post.comments.map(comment => {
                                 return (

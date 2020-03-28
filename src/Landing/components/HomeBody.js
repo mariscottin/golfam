@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import slide1 from '../../assets/img/main-slide-1.png';
 import slide2 from '../../assets/img/main-slide-2.png';
 
-import '../Landing.css';
+import './HomeBody.css';
 
 
 const HomeBody = () => {

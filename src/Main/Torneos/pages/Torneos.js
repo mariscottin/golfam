@@ -53,7 +53,7 @@ const DUMMY_TOURNAMENTS =
 const Torneos = () => {
     return(
         <div>
-            <div className="Main-body">
+            <div className="torneos__container">
                 <NavTabs>
                     <Tab to={`/torneos`} title='Fixture' active/>
                     <Tab to={`/torneos/resultados`} title='Resultados'/>

@@ -6,7 +6,8 @@
     align-items: center;
     width: 61%;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
 }
 
 .add-post__profile-img-container{

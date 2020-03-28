@@ -24,13 +24,3 @@
     }
 }
 
-.fixture-controls .fixture-control-club, .fixture-controls .fixture-control-filters{
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.fixture-controls select{
-    padding: 6px;
-    border-radius: 5px;
-    font-family: 'Roboto Condensed',sans-serif;
-}

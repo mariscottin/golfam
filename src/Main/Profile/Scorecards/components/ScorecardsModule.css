@@ -1,88 +1,178 @@
-/*Scorecards Module Component*/
-.Main-scorecards-module{
-    text-align: left;
-    width: 80%;
-    margin: auto;
-    background-color: rgb(255, 255, 255);
+.scorecards-module__container{
+    width: 100%;
+    min-height: 80vh;
+    background-color: white;
+    padding-bottom: 12px;
 }
 
-.Main-scorecards-module .player-scorecards-header{
-    padding: 12px 0 18px 18px;
-    border-bottom: solid 1px #f0f0f0;
+.scorecards-module__header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(192, 192, 192);
 }
-.Main-scorecards-module .scorecards-header-container{
-    position: relative;
-    padding: 14px 270px 0 0;
+
+.scorecards-module__img-holder{
+    width: 22%;
+    max-height: 30%;
 }
-.Main-scorecards-module .scorecards-header-container .scorecards-profile-img{
-    margin: 0 15px 0 0;
-    float: left;
-    width: 70px;
-    height: 70px;
+
+.scorecards-module__img-holder img{
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    margin: 8px;
 }
 
-.Main-scorecards-module .scorecards-header-container .scorecards-player-name{
-    font-family: 'Roboto Condensed',sans-serif;
-    font-weight: 700;
-    font-size: 38px;
-    line-height: 45px;
-    display: block;
+.scorecards-module__username{
+    width: 78%;
+    padding-top: 6px;
 }
 
-.Main-scorecards-module .scorecards-header-container .scorecards-player-club{
-    font-size: 14px;
-    margin-left: 10px;
+.scorecards-module__username h2{
+    font-size: 8vw;
+    margin: 0;
 }
 
-.Main-scorecards-module .player-scorecards-head{
-    padding: 15px 20px 26px 20px;
-    border-bottom: solid 1px #f0f0f0;
-    position: relative;
+.scorecards-module__username p{
+    font-size: 18px;
+    margin: 0;
 }
 
-.Main-scorecards-module .player-scorecards-head .date{
-    font-size: 13px;
-    text-transform: uppercase;
+.scorecards-module__info{
+    padding-top: 5px;
+    border-bottom: 1px solid rgb(192, 192, 192);
 }
 
-.Main-scorecards-module .player-scorecards-head .tournament-title{
-    padding: 0 0 15px 0;
-    margin: 0 15px 0 0;
-    font-family: 'Roboto Condensed',sans-serif;
-    font-weight: 700;
-    display: inline-block;
+.scorecards-module__info-body{
+    padding: 6px;
 }
 
-.Main-scorecards-module .player-scorecards-head .view-leaderboard-btn{
+.scorecards-module__last-tournament .date{
+    margin: 0;
+    padding-left: 4px;
+}
+
+.scorecards-module__filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.scorecards-module__filters .select-year{
+    width: 20%;
+}
+
+.scorecards-module__filters .select-year select{
+    padding: 4px;
+}
+
+.scorecards-module__filters .select-tournament{
+    width: 80%;
+    max-width: 100px;
+}
+
+.scorecards-module__filters .select-tournament select{
+    max-width: 250px;
+    padding: 5px;
+}
+
+.scorecards-module__scorecard-container{
+    padding-top: 15px;
+    width: 100%;
+}
+
+.scorecard-club{
+    font-size: 20px;
+    padding-left: 6px;
+}
+
+.scorecards-module__tournament-info-container{
+    width: 60%;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.scorecards-module__tournament-info-container .info-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
+    padding-bottom: 8px;
+    padding-top: 10px;
+    border-bottom: 1px solid #5a945a;
 }
 
 
-.Main-scorecards-module .player-scorecards-head .select-container{
-    padding-left: 0;
+.scorecards-module__tournament-info-container .info-row .hcp-item{
+    border-right: 1px solid #5a945a;
+    width: 50%;
 }
 
-.Main-scorecards-module .player-scorecards-head .select-container select{
-    display: block;
-    height: 35px;
-    font-size: 16px;
-    font-weight: 400;
+.scorecards-module__tournament-info-container .info-row .sc-item{
+    width: 50%;
 }
 
-.Main-scorecards-module .player-scorecards-container{
-    position: relative;
+.scorecards-module__tournament-info-container .denotation{
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0;
 }
 
-.Main-scorecards-module .player-scorecards-container .table-item-head{
-    padding: 14px 17px;
-    min-height: 35px;
-    position: relative;
-}
-
-.Main-scorecards-module .player-scorecards-container .table-item-head .table-heading{
+.tournament-position .value{
     font-size: 22px;
-    line-height: 35px;
-    display: block;
-    margin: 0 45px 0 0;
+    margin: 0;
+}
+
+@media(min-width: 425px){
+    .scorecards-module__img-holder{
+        width: 70px;
+    }
+
+    .scorecards-module__username{
+        width: 100%;
+    }
+    .scorecards-module__username h2{
+        font-size: 36px;
+    }
+}
+
+@media(min-width: 628px){
+    .scorecards-module__container{
+        width: 85%;
+        margin: auto;
+    }
+
+    .scorecards-module__last-tournament h5{
+        font-size: 24px;
+    }
+
+    .scorecards-module__filters .select-year{
+        width: auto;
+    }
+
+    .scorecards-module__filters .select-year select{
+        width: auto;
+        padding: 5px;
+        margin-right: 8px;
+    }
+
+    .scorecards-module__filters .select-tournament select{
+        width: auto;
+    }
+}
+
+@media(min-width: 980px) {
+    .scorecards-module__tournament-info-container{
+        padding-top: 10px;
+    }
 }

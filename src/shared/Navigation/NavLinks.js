@@ -16,10 +16,10 @@ const NavLinks = props => {
                 <NavLink to="/torneos"><FontAwesomeIcon className="navbar-icon" icon={faGolfBall} /> Torneos</NavLink>
             </li>
             <li>
-                <NavLink to={`/perfil/${props.currentUserId}`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
+                <NavLink to={`/perfil/123456`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
             </li>
             <li>
-                <NavLink to="/" exact><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Cerrar Sesión</NavLink>
+                <NavLink to="/" exact ><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Cerrar Sesión</NavLink>
             </li>
         </ul>
     )

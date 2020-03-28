@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../Landing.css';
+import './HomeFooter.css';
 
 class HomeFooter extends Component {
     render(){

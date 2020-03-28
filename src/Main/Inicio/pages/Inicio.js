@@ -3,12 +3,9 @@ import AddPost from '../components/AddPost';
 import Posts from '../components/Posts';
 import InicioHeader from '../components/InicioHeader';
 
-import '../Inicio.css';
-
 
 const Inicio = (props)=> {
  
-
     const API_URL = 
     'http://api.openweathermap.org/data/2.5/weather?lat=-34.4530141&lon=-58.507858&lang=es&units=metric&APPID=60b9e5dce86db6f6f64e9a05c9f861d7'
     

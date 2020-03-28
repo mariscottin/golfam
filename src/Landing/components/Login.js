@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
-import '../Landing.css';
+import './Login.css';
 
 const Login = props => {
 
     const [matricula, setMatricula] = useState(0);
     const [password, setPassword] = useState('');
+    const [notRegistered, setNotRegistered] = useState(false);
+    const [loginError, setLoginError] = useState(false);
 
     const DUMMY_USERS = [
         {
@@ -76,17 +78,18 @@ const Login = props => {
         setPassword(+event.target.value);
     }
     
-    const onSubmitHandler = () => {
+    const onSubmitHandler = (event) => {
+        setNotRegistered(false);
+        setLoginError(false);
         const user = DUMMY_USERS.filter(user => user.matricula === matricula);
         if(!user[0]) {
-            alert('Usuario no registrado. Regístrese para continuar');
+            event.preventDefault();
+            setNotRegistered(true);
         }else if(user[0].matricula !== matricula || user[0].password !== password){
-            alert('Usuario y/o contraseña incorrecto');
+            event.preventDefault();
+            setLoginError(true);
         }else{
-            props.loggedIn(user[0]);
-            window.history.pushState({
-                id: 'inicio'
-            }, 'Golfam | Inicio', 'http://localhost:3000/inicio');
+            props.onLoginHandler(true);
         }
     }
 
@@ -103,6 +106,12 @@ const Login = props => {
                     <label htmlFor="login-password">Contraseña:</label>
                     <input type="password" className="form-control" id="login-password" placeholder="Ingrese su contraseña" onChange={passwordInputHandler}/>
                 </div>
+                    {notRegistered &&
+                        <p className="alert alert-danger">Usuario no registrado, por favor, ¡<Link to="/registrarme">Registrate</Link> para ingresar!</p>
+                    }
+                    {loginError &&
+                        <p className="alert alert-danger">La contraseña no coincide con la matrícula.</p>
+                    }
                 <Link to="/inicio" className="btn btn-primary" onClick={onSubmitHandler}>Iniciar Sesión</Link>
                 <span className="register-span">¿Todavía no te registraste? <Link to="/registrarme">¡Registrate!</Link></span>
             </form>

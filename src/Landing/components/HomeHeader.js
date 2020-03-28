@@ -2,7 +2,7 @@ import React from 'react';
 import Login from './Login';
 import Logo from '../../assets/img/logo-2.png'
 
-import '../Landing.css';
+import './HomeHeader.css';
 
 const HomeHeader = props => {
     return (
@@ -14,7 +14,7 @@ const HomeHeader = props => {
                             <img src={Logo} className="App-logo" alt="logo" />
                         </div>
                         <div className="col-lg-6">
-                            <Login loggedIn={props.loggedIn}/>
+                            <Login onLoginHandler={props.onLoginHandler}/>
                         </div>
 
                     </div>

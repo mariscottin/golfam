@@ -4,6 +4,7 @@ import ScorecardsModule from '../components/ScorecardsModule';
 import NavTabs from '../../../shared/NavTabs/NavTabs';
 import Tab from '../../../shared/NavTabs/Tab';
 
+import './UserScorecards.css';
 const DUMMY_SCORECARDS = [
     {
         id: 'sc_1',
@@ -33,7 +34,7 @@ const DUMMY_SCORECARDS = [
         modalidad: 'Medal Play',
         score: [5, 3, 4, 5, 5, 5, 3, 2, 4, 4, 4, 5, 3, 4, 3, 5, 3, 4],
         position: 2,
-        date: '14/02/2020'
+        date: '8/02/2020'
     }
 ]
 
@@ -99,21 +100,23 @@ const UserScorecards = ({ currentUser }) => {
 
     return(
         <div>
-            <div className="Main-body">
-            {currentUser.id === userId ?
-                 <NavTabs>
-                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} active />
-                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
-                </NavTabs>
-                :
-                <NavTabs>
-                    <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} />
-                    <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} active/>
-                    <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
-                </NavTabs>
-                }
+            <div className="user-scorecards__scorecards-container">
+                <div className="user-scorecards__navbar">
+                    {currentUser.id === userId ?
+                        <NavTabs>
+                            <Tab to={`/perfil/${loadedUser[0].id}`} title={'Mi Perfil'} />
+                            <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Mis Tarjetas'} active />
+                            <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Mi Calendario'} />
+                            <Tab to={`/perfil/${loadedUser[0].id}/consumos`} title={'Mis Consumos'} />
+                        </NavTabs>
+                        :
+                        <NavTabs>
+                            <Tab to={`/perfil/${loadedUser[0].id}`} title={'Perfil'} />
+                            <Tab to={`/perfil/${loadedUser[0].id}/tarjetas`} title={'Tarjetas'} active/>
+                            <Tab to={`/perfil/${loadedUser[0].id}/calendario`} title={'Calendario'} />
+                        </NavTabs>
+                    }
+                </div>
                 <div className="tab-content" id="nav-tabContent">
                     <div className="tab-pane fade show active">
                         <ScorecardsModule scorecards={loadedScorecards} user={loadedUser[0]}/>

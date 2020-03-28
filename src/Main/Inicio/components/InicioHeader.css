@@ -1,12 +1,13 @@
 .inicio-header{
     padding: 0.5rem;
-    padding-bottom: 2rem;
     width: 85%;
     margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(161, 161, 161);
 }
 
 .logo-status-container{
@@ -18,7 +19,7 @@
 }
 
 .inicio-header .logo-container img{
-    max-width: 120px;
+    max-width: 100px;
 }
 
 .estado-cancha-container{
@@ -49,6 +50,7 @@
 @media(max-width: 767px){
     .inicio-header{
         width: 95%;
+        text-align: center;
     }
 
     .logo-status-container{

@@ -13,35 +13,37 @@ import Resultados from './Main/Torneos/pages/Resultados';
 const App = () => {
 
   //Once authenticated, pass the current user to profile
-  const [currentUser, setCurrentUser] = useState({
-    id: 123456,
-            name: "Nicolas",
-            lastName: "Mariscotti",
-            matricula: 113113,
-            password: 113113,
-            club: "Club Nautico San Isidro",
-            age: 26,
-            handicap: 5.9,
-            country: "Argentina",
-            profileImg: 'https://imagizer.imageshack.com/img921/627/FLY9pC.jpg',
-            followers: 12932,
-            following: 1993
-  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const currentUser =
+    {
+        id: 123456,
+        name: "Nicolas",
+        lastName: "Mariscotti",
+        matricula: 113113,
+        club: "Club Nautico San Isidro",
+        age: 26,
+        handicap: 5.9,
+        country: "Argentina",
+        profileImg: 'https://imagizer.imageshack.com/img921/627/FLY9pC.jpg',
+        followers: 12932,
+        following: 1993
+    }
 
-  const onLoggedInHandler = (user) => {
-    setCurrentUser(user)
-  }
+    const onLoginHandler = (isLogin) => {
+      setIsLoggedIn(isLogin);
+    }
+
 
   return (
     <Router>
       <div className="App">
-        <MainNavigation currentUser={currentUser} />
+        <MainNavigation currentUser={currentUser} isLoggedIn={isLoggedIn}/>
         <main>
           <Switch>
               <Route path="/" exact>
-                <Home loggedIn={onLoggedInHandler} />
+                <Home onLoginHandler={onLoginHandler}/>
               </Route>
-              
+            
               <Route path="/registrarme">
                 <Register />
               </Route>

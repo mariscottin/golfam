@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Footer from '../components/HomeFooter';
 import RegisterForm from '../components/RegisterForm';
 
-import '../Landing.css';
+import './Register.css';
 
 class Register extends Component {
     render() {

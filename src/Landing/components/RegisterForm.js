@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/img/logo-2.png'
 
-import '../Landing.css';
+import './RegisterForm.css';
 
 const RegisterForm = ()=> {
 
@@ -27,7 +27,7 @@ const RegisterForm = ()=> {
     return(
         <div className="jumbotron">
             <img src={Logo} alt="golfam-logo" className="register-logo"/>
-            <h3>Registrarme:</h3>
+            <h3 className="register-title">Registrarme:</h3>
             <form onSubmit={handleSubmit} className="register-form">
                 <div className="form-group">
                     <label forhtml="registerName">Nombre: </label>

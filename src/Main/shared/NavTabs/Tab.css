@@ -5,3 +5,7 @@
 .nav-link:hover{
     color: rgb(0, 68, 0);
 }
+
+.nav{
+    flex-wrap: nowrap;
+}
