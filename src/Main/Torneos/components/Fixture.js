@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FixtureFilters from './FixtureFilters';
+import Table from 'react-bootstrap/Table';
 
 import './Fixture.css';
 
@@ -11,7 +12,7 @@ const Fixture = ({ torneos }) => {
             <div className="fixture-controls container">
                 <FixtureFilters />
             </div>
-            <table className="table fixture-table">
+            <Table responsive striped bordered>           
                 <thead>
                     <tr>
                         <th scope="col">Fecha</th>
@@ -36,7 +37,7 @@ const Fixture = ({ torneos }) => {
                         })
                     }
                 </tbody>
-            </table>
+            </Table>
 
         </div>
     )

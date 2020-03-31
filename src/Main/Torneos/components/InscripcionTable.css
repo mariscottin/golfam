@@ -1,4 +1,16 @@
 
-.inscripcion-table-container{
+.inscripcion-table{
     background-color: #ffffff;
+}
+
+.table{
+    margin-bottom: 0;
+}
+
+.table thead th {
+    text-align: center;
+}
+
+.table tbody {
+    text-align: center;
 }

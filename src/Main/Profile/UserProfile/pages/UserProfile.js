@@ -1,5 +1,7 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import NavTabs from '../../../shared/NavTabs/NavTabs';
 import Tab from '../../../shared/NavTabs/Tab';
 import ProfileCard from '../components/ProfileCard';
@@ -59,14 +61,22 @@ const DUMMY_USERS = [
         followers: 229,
         following: 596
     },
-
 ]
+
+
 
 const UserProfile = ({ currentUser }) => {
     const userId = +useParams().id;
     const loadedUser = DUMMY_USERS.filter(item => item.id === userId);
-    console.log("currentUser " + currentUser.id)
-    console.log("userId" + userId)
+    
+    const [toggleLogout, setToggleLogout] = useState(false);
+
+
+    const handleToggleLogOut = () => {
+        !toggleLogout ? setToggleLogout(true) : setToggleLogout(false);
+    }
+
+
     return (
         <div className="user-profile__container">
             <div className="user-profile__navbar">
@@ -85,8 +95,21 @@ const UserProfile = ({ currentUser }) => {
                     </NavTabs>
                 }
             </div>
+            
             <div className="tab-content" id="nav-tabContent">
                 <div className="tab-pane fade show active">
+                    <div className="logout__container">
+                        <div className="logout__dots" onClick={handleToggleLogOut}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        {toggleLogout &&
+                            <div className="logout__link-box">
+                                <Link to="/"><FontAwesomeIcon icon={faSignOutAlt}/> Salir</Link>
+                            </div>
+                        }
+                    </div>
                     <ProfileCard user={loadedUser[0]} />
                 </div>
             </div>

@@ -1,50 +1,53 @@
 import React from 'react';
+import Table from 'react-bootstrap/Table'
 
 import './InscripcionTable.css';
 
 
-const InscripcionTable = ({ tournament }) => {
-    return(
+const InscripcionTable = () => {
+    return (
         <div className="inscripcion-table">
-            <table className="table">
-                    <thead>
-                        <th scope="col">Horario</th>
-                        <th scope="col">Jugador 1</th>
-                        <th scope="col">Jugador 2</th>
-                        <th scope="col">Jugador 3</th>
-                        <th scope="col">Jugador 4</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">7:37</th>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7:46</th>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7:55</th>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8:04</th>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                            <td>Disponible</td>
-                        </tr>
-                    </tbody>
-            </table>
+            <Table responsive striped bordered>
+                <thead>
+                    <tr>
+                        <th>Horario</th>
+                        <th>Jug. 1</th>
+                        <th>Jug. 2</th>
+                        <th>Jug. 3</th>
+                        <th>Jug. 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>7:37</th>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                    </tr>
+                    <tr>
+                        <th>7:46</th>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                    </tr>
+                    <tr>
+                        <th>7:55</th>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                    </tr>
+                    <tr>
+                        <th>8:04</th>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                        <td>Disponible</td>
+                    </tr>
+                </tbody>
+            </Table>
         </div>
     )
 }

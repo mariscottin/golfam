@@ -47,23 +47,23 @@ const DUMMY_TOURNAMENTS =
             state: 'Cerrado'
         }
     ]
-  
+
 
 const Inscripcion = () => {
     const tournId = +useParams().id;
     const loadedTournament = DUMMY_TOURNAMENTS.filter(tour => tour.id === tournId);
-    
-    return(
-        <div>
-            <div className="Main-body">
-                <div className="back-container">
-                    <Link to="/torneos" className="back-link">Volver al Fixture</Link>
-                </div>
+
+    return (
+        <div className='inscripcion__container'>
+            <div className="back-container">
+                <Link to="/torneos" className="back-link">Volver al Fixture</Link>
+            </div>
+            <div className='inscripcion__title'>
                 <h1>{loadedTournament[0].name}</h1>
                 <h4>Inscripción</h4>
-                <div className="inscripcion-table-container container">
-                    <InscripcionTable tournament={loadedTournament[0]}/>
-                </div>
+            </div>
+            <div className="inscripcion-table__container">
+                <InscripcionTable tournament={loadedTournament[0]} />
             </div>
         </div>
     )

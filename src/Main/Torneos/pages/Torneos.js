@@ -3,6 +3,7 @@ import Fixture from '../components/Fixture';
 import NavTabs from '../../shared/NavTabs/NavTabs';
 import Tab from '../../shared/NavTabs/Tab';
 
+import './Torneos.css';
 
 //STATIC TOURNAMENTS DATA!! FETCH FROM DB!!
 const DUMMY_TOURNAMENTS =
@@ -53,12 +54,12 @@ const DUMMY_TOURNAMENTS =
 const Torneos = () => {
     return(
         <div>
-            <div className="torneos__container">
+            <div>
                 <NavTabs>
                     <Tab to={`/torneos`} title='Fixture' active/>
                     <Tab to={`/torneos/resultados`} title='Resultados'/>
                 </NavTabs>
-                <div className="tab-content">
+                <div className="tab-content torneos__container">
                     <div className="tab-pane fade show active">
                         <Fixture torneos={DUMMY_TOURNAMENTS}/>
                     </div>

@@ -1,9 +1,29 @@
-.back-container{
-    position: relative;
+.inscripcion__container{
+    width: 100%;
 }
 
-.back-link{
-    position: absolute;
-    left: 100px;
-    top: 20px;
+.inscripcion__title{
+    text-align: center;
+}
+
+.back-container{
+    padding: 12px;
+}
+
+@media(min-width: 767px) {
+
+    .inscripcion__container{
+        width: 85%;
+        margin: auto;
+    }
+    .back-container{
+        position: relative;
+    }
+
+    
+    .back-link{
+        position: absolute;
+        left: 25px;
+        top: 20px;
+    }
 }

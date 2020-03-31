@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFlag, faGolfBall, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFlag, faGolfBall, faUser} from '@fortawesome/free-solid-svg-icons';
 
 
 import './NavLinks.css';
@@ -17,9 +17,6 @@ const NavLinks = props => {
             </li>
             <li>
                 <NavLink to={`/perfil/123456`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
-            </li>
-            <li>
-                <NavLink to="/" exact ><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Cerrar Sesión</NavLink>
             </li>
         </ul>
     )
