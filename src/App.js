@@ -6,6 +6,7 @@ import Register from './Landing/pages/Register';
 import Inicio from './Main/Inicio/pages/Inicio';
 import UserProfile from './Main/Profile/UserProfile/pages/UserProfile';
 import UserScorecards from './Main/Profile/Scorecards/pages/UserScorecards';
+import Calendar from './Main/Profile/Calendar/Calendar';
 import Torneos from './Main/Torneos/pages/Torneos';
 import Inscripcion from './Main/Torneos/pages/Inscripcion';
 import Resultados from './Main/Torneos/pages/Resultados';
@@ -13,7 +14,7 @@ import Resultados from './Main/Torneos/pages/Resultados';
 const App = () => {
 
   //Once authenticated, pass the current user to profile
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const currentUser =
     {
         id: 123456,
@@ -56,8 +57,12 @@ const App = () => {
                 <UserProfile currentUser={currentUser} />
               </Route>
 
-              <Route path="/perfil/:id/tarjetas" exact>
+              <Route path="/perfil/:id/tarjetas">
                 <UserScorecards currentUser={currentUser} />
+              </Route>
+
+              <Route path="/perfil/:id/calendario">
+                <Calendar />
               </Route>
 
               <Route path="/torneos" exact>
@@ -71,6 +76,8 @@ const App = () => {
               <Route path="/torneos/inscripcion/:id">
                 <Inscripcion />
               </Route>
+
+              
 
               <Redirect to="/" />
             
