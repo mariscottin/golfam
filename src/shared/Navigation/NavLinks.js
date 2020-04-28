@@ -1,12 +1,13 @@
-import React from 'react';
+import  React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFlag, faGolfBall, faUser} from '@fortawesome/free-solid-svg-icons';
-
+import { faFlag, faGolfBall, faUser, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from '../context/auth-context';
 
 import './NavLinks.css';
 
-const NavLinks = props => {
+const NavLinks = () => {
+    const auth = useContext(AuthContext);
     return (
         <ul className= "nav-links">
             <li className="first-li">
@@ -18,6 +19,10 @@ const NavLinks = props => {
             <li>
                 <NavLink to={`/perfil/123456`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
             </li>
+            <li>
+                <div className="logout-btn" onClick={()=> auth.logout()}><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Cerrar Sesion</div>
+            </li>
+           
         </ul>
     )
 }

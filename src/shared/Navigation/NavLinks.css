@@ -51,6 +51,11 @@
     background: #5a945a;
     color: #5a945a;
   }
+
+  .logout-btn:hover{
+    cursor: pointer;
+    color:#5a945a
+  }
   
   @media (min-width: 768px) {
     .nav-links {

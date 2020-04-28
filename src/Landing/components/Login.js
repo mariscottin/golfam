@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
-
+import { AuthContext } from '../../shared/context/auth-context';
 import './Login.css';
 
-const Login = props => {
-
+const Login = () => {
+    const auth = useContext(AuthContext);
     const [matricula, setMatricula] = useState(0);
     const [password, setPassword] = useState('');
     const [notRegistered, setNotRegistered] = useState(false);
@@ -89,7 +89,7 @@ const Login = props => {
             event.preventDefault();
             setLoginError(true);
         }else{
-            props.onLoginHandler(true);
+            auth.login();
         }
     }
 
