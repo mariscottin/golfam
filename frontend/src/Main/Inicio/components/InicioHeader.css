@@ -1,0 +1,85 @@
+.inicio-header{
+    padding: 0.5rem;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(161, 161, 161);
+}
+
+.logo-status-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.inicio-header .logo-container img{
+    max-width: 100px;
+}
+
+.estado-cancha-container{
+    padding: 2rem 0;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: left;
+}
+
+.estado-cancha{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.weather-container{
+    width: 40%;
+}
+
+.estado-cancha-container .abierta{
+    color: rgb(57, 131, 57)
+}
+
+.weather-loading{
+    margin: auto;
+}
+
+@media(max-width: 767px){
+    .inicio-header{
+        width: 95%;
+        text-align: center;
+    }
+
+    .logo-status-container{
+        width: 60%;
+    }
+
+    .estado-cancha-container{
+        width: 60%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .estado-cancha-container h5, .estado-cancha{
+        font-size: 1.15rem;
+        margin: 0;
+    }
+
+    .inicio-header .logo-container {
+        width: 40%;
+    }
+
+    .inicio-header .logo-container img {
+        width: 90%;
+        max-width: 100px;
+    }
+       
+    .weather-container{
+        width: 40%;
+        margin: auto;
+        padding-top: 0;
+    }
+}
