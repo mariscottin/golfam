@@ -1,6 +1,7 @@
-
 .fixture{
+    min-height: 50vh;
 }
+
 
 .fixture-table{
     text-align: center;
@@ -13,6 +14,13 @@
 
 .fixture-controls{
     text-align: center;
+}
+
+.fixture-loading-spinner__container{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 @media(max-width: 991px) {

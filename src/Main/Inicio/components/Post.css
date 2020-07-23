@@ -59,23 +59,68 @@
     color: #4c7c4c;
 }
 
+.like-comment__btn.liked{
+    background-color: #5a945a;
+    color: white;
+}
 
+.post-likes-list a{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(31, 31, 31);
+    line-height: 2.5rem;
+}
 
-.post__container .post-footer .leave-comment textarea{
+.post-likes-list a img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.leave-comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.leave-comment textarea{
     resize: none;
     height: 60px;
     font-size: 14px;
     border-radius: 10px;
     width: 80%;
 }
-.post__container .post-footer .leave-comment .fa-arrow-alt-circle-right{
+
+
+.leave-comment .fa-arrow-alt-circle-right{
     color: #5a945ad3;
     font-size: 2rem;
     margin-left: 0;
     cursor: pointer;
 }
-
 .post__container .post-footer .leave-comment .fa-arrow-alt-circle-right:hover{
     color: #5a945a;
+}
+
+.leave-comment .comment-loading-spinner__container{
+    width: 20%;
+}
+
+.comment-loading-spinner__container div{
+    width: 25% !important;
+    height: 25% !important;
+}
+
+@media(max-width: 676px) {
+    .comment-loading-spinner__container div{
+        width: 100% !important;
+        height: 100% !important;
+    }
 }
 

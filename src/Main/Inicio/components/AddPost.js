@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from '../../../shared/context/auth-context';
 
 import './AddPost.css';
 
-const AddPost = ({ handleAddPost, currentUser }) => {
-
+const AddPost = ({ handleAddPost }) => {
+    const auth = useContext(AuthContext);
     const [addPostStyle, setAddPostStyle] = useState();
     const [addPostValue, setAddPostValue] = useState();
     const [cancelButton, setCancelButton] = useState(false);
@@ -27,7 +28,7 @@ const AddPost = ({ handleAddPost, currentUser }) => {
         if (!addPostValue) {
             return;
         }; //Do nothing if there is nothing in the textarea
-        handleAddPost(addPostValue, currentUser); //run the function created in "Inicio" to add a post
+        handleAddPost(addPostValue, auth.userId); //run the function created in "Inicio" to add a post
         setAddPostValue(''); //Turn the textarea back to nothing
         setAddPostStyle(); //Remove styling from textarea
         setCancelButton(false); //Remove the close btn
@@ -47,7 +48,7 @@ const AddPost = ({ handleAddPost, currentUser }) => {
     return (
         <div className="add-post__container">
             <div className="add-post__profile-img-container">
-                <img src={currentUser.profileImg} alt={currentUser.name} className="profile-form-img" />
+                <img src={`${process.env.REACT_APP_ASSET_URL}/${auth.userProfileImg}`} alt={`Foto de perfil de ${auth.userName}`} className="profile-form-img" />
             </div>
             <form className="add-post__form" onSubmit={handleSubmit}>
                 <div className="textarea-position">
@@ -55,7 +56,7 @@ const AddPost = ({ handleAddPost, currentUser }) => {
                         className="form-control mr-sm-2 textarea" 
                         style={addPostStyle} 
                         value={addPostValue} 
-                        placeholder="Hacé un comentario..." 
+                        placeholder={`Hacé un comentario, ${auth.userName}`}
                         onChange={(e) => setAddPostValue(e.target.value)} 
                         onFocus={handleFocus}>
                     </textarea>

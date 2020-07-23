@@ -10,7 +10,7 @@ const HomeHeader = props => {
             <header className="App-header">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 center">
                             <img src={Logo} className="App-logo" alt="logo" />
                         </div>
                         <div className="col-lg-6">

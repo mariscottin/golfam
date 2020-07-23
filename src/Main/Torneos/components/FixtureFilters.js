@@ -11,14 +11,15 @@ const FixtureFilters = props => {
                 <label forhtml="clubFixture">Club: </label>
                 <select id="clubFixture"  className='form-control'> 
                     <option>Club Nautico San Isidro</option>
-                    <option>Jockey Club de San Isidro</option>
-                    <option>San Isidro Golf Club</option>
+                    <option>Club 2</option>
+                    <option>Club 3</option>
+                    <option>Club 4</option>
                 </select>
             </div>
             <div className="col-lg-6 fixture-control-filters">
                 <label forhtml="filterFixture" ><FontAwesomeIcon icon={faFilter} />Filtros:</label>
                 <select id="filterFixture"  className='form-control'>
-                    <option></option>
+                    <option>Sin Filtros</option>
                     <option>Filtro 1</option>
                     <option>Filtro 2</option>
                     <option>Filtro 3</option>

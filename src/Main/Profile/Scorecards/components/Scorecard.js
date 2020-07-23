@@ -241,10 +241,6 @@ const Scorecard = () => {
                     </Table>
                 </div>
             }
-
-
-
-
         </div>
     )
 }

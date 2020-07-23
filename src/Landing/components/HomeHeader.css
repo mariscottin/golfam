@@ -1,7 +1,7 @@
 
   .App-logo {
-    height: 50vmin;
-    pointer-events: none;
+    width: 70%;
+    margin: auto;
   }
   
   
@@ -12,8 +12,15 @@
     align-items: center;
     font-size: calc(10px + 2vmin);
     color: rgb(66, 66, 66);
+    padding-bottom: 1rem;
   }
   
   .App-link {
     color: #179abe;
+  }
+
+  @media(max-width: 991px){
+    .App-logo {
+      width: 60%;
+    }
   }

@@ -1,20 +1,20 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy } from '@fortawesome/free-solid-svg-icons';
-
+import cnsiLogo from '../../../../assets/img/cnsi-logo.png'
 import Scorecard from './Scorecard';
 import './ScorecardsModule.css';
 
-const ScorecardsModule = ({ scorecards, user }) => {
+const ScorecardsModule = ({ scorecards }) => {
     return (
         <div className="scorecards-module__container">
             <div className="scorecards-module__header">
                 <div className="scorecards-module__img-holder">
-                    <img src={user.profileImg} alt={user.name} />
+                    <img src={cnsiLogo} alt="CNSI logo" />
                 </div>
                 <div className="scorecards-module__username">
-                    <h2>{user.name} {user.lastName}</h2>
-                    <p>{user.club}</p>
+                    <h2>Nicolas Mariscotti</h2>
+                    <p>Club Nautico San Isidro</p>
                 </div>
             </div>
             <div className="scorecards-module__info">
@@ -47,7 +47,7 @@ const ScorecardsModule = ({ scorecards, user }) => {
                 </div>
             </div>
             <div className="scorecards-module__scorecard-container">
-                <h3 className="scorecard-club">{user.club}</h3>
+                <h3 className="scorecard-club">Club Nautico San Isidro</h3>
                 <Scorecard />
             </div>
             <div className="scorecards-module__tournament-info-container">

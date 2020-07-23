@@ -5,15 +5,15 @@ import './WeatherWidget.css';
 const WeatherWidget = props => {
     return(
         <div className="weather-widget">
-            <div className="weather-widget__location">
+            <div className="weather-widget__row">
                 <h5>{props.title}:</h5>
             </div>
             <div className="weather-widget__row">
-                <div className="weather-widget__col">
-                    <img src={`http://openweathermap.org/img/w/${props.icon}.png`} alt="Icono del Clima" className="weather-widget__icon"/>
-                    <h2 className="weather-widget__desc">{props.description}</h2>
-                </div>
-                <h2 className="weather-widget__temp">{Math.round(props.temperature)}&deg;C</h2>
+                    <img src={`https://openweathermap.org/img/w/${props.icon}.png`} alt="Icono del Clima" className="weather-widget__icon"/>
+                    <h2 className="weather-widget__temp">{Math.round(props.temperature)}&deg;C</h2>
+            </div>
+            <div className="weather-widget__row">
+                <h2 className="weather-widget__desc">{props.description}</h2>
             </div>
 
         </div>

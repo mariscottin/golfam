@@ -1,70 +1,60 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import InscripcionTable from '../components/InscripcionTable';
 
 import './Inscripcion.css'
-//STATIC TOURNAMENTS DATA!! FETCH FROM DB!!
-const DUMMY_TOURNAMENTS =
-    [
-        {
-            id: 11111,
-            date: '12/03/2020',
-            name: 'Torneo los Teros',
-            mod: 'Medal Play',
-            cat: '0-36',
-            state: 'Abierto'
-        },
-        {
-            id: 11112,
-            date: '13/03/2020',
-            name: 'Torneo los Patos',
-            mod: 'Fourball Americana',
-            cat: '0-36',
-            state: 'Abierto'
-        },
-        {
-            id: 11113,
-            date: '19/03/2020',
-            name: 'Torneo las Palomas',
-            mod: 'Laguneada',
-            cat: '0-18, 18-36',
-            state: 'Cerrado'
-        },
-        {
-            id: 11114,
-            date: '20/03/2020',
-            name: 'Gran Premio',
-            mod: 'Medal Play',
-            cat: 'Scratch, 0-9, 10-16',
-            state: 'Cerrado'
-        },
-        {
-            id: 11115,
-            date: '26/03/2020',
-            name: 'Sweepstake',
-            mod: 'Medal Play',
-            cat: '0-36',
-            state: 'Cerrado'
-        }
-    ]
-
 
 const Inscripcion = () => {
-    const tournId = +useParams().id;
-    const loadedTournament = DUMMY_TOURNAMENTS.filter(tour => tour.id === tournId);
+    const tournId = useParams().id;
+    const [loadedTournament, setLoadedTournament] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+
+    const loadTournament = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/tournaments/tournament/${tournId}`);
+            const responseData = await response.json();
+            if (!response.ok) {
+                throw new Error(responseData.message);
+            }
+            setLoadedTournament(responseData.tournament);
+            setIsLoading(false);
+        } catch (err) {
+            console.log(err);
+        }
+    }, [tournId])
+
+    useEffect(() => {
+        loadTournament();
+    }, [loadTournament])
+
+    const registeredHandler = () => {
+        loadTournament();
+    }
 
     return (
         <div className='inscripcion__container'>
+
             <div className="back-container">
                 <Link to="/torneos" className="back-link">Volver al Fixture</Link>
             </div>
-            <div className='inscripcion__title'>
-                <h1>{loadedTournament[0].name}</h1>
-                <h4>Inscripción</h4>
-            </div>
-            <div className="inscripcion-table__container">
-                <InscripcionTable tournament={loadedTournament[0]} />
-            </div>
+            {isLoading &&
+                <div className="fixture-loading-spinner__container">
+                    <ReactLoading type={'spin'} color={'#5a945a'} height={'20%'} width={'20%'} />
+                </div>
+            }
+            {(!isLoading && loadedTournament) &&
+                <React.Fragment>
+                    <div className='inscripcion__title'>
+                        <h1>{loadedTournament.name}</h1>
+                        <h4>Inscripción</h4>
+                    </div>
+                    <div className="inscripcion-table__container">
+                        <InscripcionTable tournament={loadedTournament} registeredHandler={registeredHandler}/>
+                    </div>
+                </React.Fragment>
+            }
         </div>
     )
 }

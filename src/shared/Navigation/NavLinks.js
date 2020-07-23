@@ -17,10 +17,10 @@ const NavLinks = () => {
                 <NavLink to="/torneos"><FontAwesomeIcon className="navbar-icon" icon={faGolfBall} /> Torneos</NavLink>
             </li>
             <li>
-                <NavLink to={`/perfil/123456`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
+                <NavLink to={`/perfil/${auth.userId}`}><FontAwesomeIcon className="navbar-icon" icon={faUser} /> Mi Perfil</NavLink>
             </li>
             <li>
-                <div className="logout-btn" onClick={()=> auth.logout()}><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Cerrar Sesion</div>
+                <div className="logout-btn" onClick={()=> auth.logout()}><FontAwesomeIcon className="navbar-icon" icon={faSignOutAlt} /> Salir</div>
             </li>
            
         </ul>

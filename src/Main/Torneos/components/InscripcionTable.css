@@ -14,3 +14,84 @@
 .table tbody {
     text-align: center;
 }
+
+.table .time-row td{
+    font-weight: bold;
+}
+
+.table .time-row .td-disponible{
+    color: #5a945a;
+}
+
+.table .time-row .td-disponible:hover{
+    cursor: pointer;
+    background-color: rgb(207, 207, 207);
+}
+
+.registered-avatar__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.registered-avatar__img{
+    width: 50px;
+    height: 50px;
+    margin-right: 4px;
+    margin-top: 6px;
+}
+
+.registered-avatar__img img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.registered-avatar__info {
+    text-align: left;
+    margin-left: 6px;
+}
+
+.registered-avatar__info p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.registered-avatar__matricula, .registered-avatar__hcp{
+    font-weight: normal;
+}
+
+
+.inscripcion-search-player{
+    position: relative;
+}
+
+.players-search-result{
+    position: absolute;
+    z-index: 10;
+    top: 69px;
+    width: 100%;
+    background-color: white;
+}
+
+.players-search-result ul{
+    list-style: none;
+    padding: 8px 0;
+    border: 1px solid rgba(0, 128, 0, 0.205);
+    margin-bottom: 0;
+}
+
+.players-search-result ul li{
+    padding: 8px 6px;
+}
+
+.players-search-result ul li:hover{
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+}
+
+.player-was-selected{
+    display: none;
+}

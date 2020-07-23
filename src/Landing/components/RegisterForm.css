@@ -18,6 +18,72 @@
   .App-register .jumbotron .btn-danger{
     margin-left: 18px;
   }
+
+  .register-loading-spinner__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-row{
+    margin-bottom: 15px;
+  }
+
+  .react-datepicker-wrapper{
+    width: 100%;
+  }
+
+  .react-datepicker-popper{
+    z-index: 10 !important;
+  }
+
+  .ReactPasswordStrength-input{
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .ReactPasswordStrength-strength-desc{
+    width: 40%;
+    font-size: 0.75rem;
+  }
+
+  .repete-password__container{
+    display: block !important;
+  }
+
+  .form-control.passwords-not-match{
+    border: 1px solid red;
+  }
+
+  .form-control.passwords-match{
+    border: 1px solid green;
+  }
+
+  .repete-password-feedback{
+    display: block;
+    margin-bottom: 0;
+    margin-left: 5px;
+    font-size: 0.75rem;
+  }
+
+  .repete-password-feedback.no-match{
+    color: red;
+  }
+
+  .repete-password-feedback.match{
+    color: green;
+  }
+
+
+  @media(max-width: 991px){
+    .form-row{
+      margin-bottom: 0;
+    }
+
+    .register-buttons__container{
+      text-align: center;
+    }
+  }
   
   @media(max-width: 576px){
     .App-register .jumbotron{
@@ -27,5 +93,4 @@
   
   .register-form{
     text-align: left;
-  
   }

@@ -1,0 +1,135 @@
+.club-card__container{
+    width: 100%;
+    margin: auto;
+    min-height: 70vh;
+    height: auto;
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.club-card__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #5a945a;
+}
+
+.club-card__logo-container{
+    width: 30%;
+    text-align: center;
+}
+
+.club-card__logo-container img{
+    width: 100%;
+}
+
+.club-card__name-container{
+    width: 70%;
+}
+
+.club-card__name-container h1{
+    font-size: 7vw;
+    margin: 0;
+    padding-left: 5px;
+}
+
+.club-card__body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.google-maps__container{
+    width: 100%;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.google-maps__container .map-container{
+    height: 200px;
+}
+
+.google-maps__container .address{
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+.club-card__info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+
+.club-card__info-container .info-col .info .denotation{
+    font-size: 1rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.club-card__info-container .info-col .info{
+    margin: 20px 2px;
+}
+
+@media(min-width: 627px){
+    .club-card__container{
+        width: 85%;
+        min-height: 90vh;
+        border-radius: 5px;
+    }
+
+    .club-card__logo-container{
+        width: 15%;
+        margin: auto;
+    }
+    .club-card__logo-container img{
+        width: 80%;
+        margin: auto;
+    }
+
+    .club-card__name-container{
+        width: 80%;
+    }
+
+    .club-card__name-container h1{
+        font-size: 2.5rem;
+        padding: 0;
+    }
+
+    .club-card__body{
+        width: 100%;
+    }
+
+    .google-maps__container{
+        width: 40%;
+        margin: auto;
+    }
+
+    .google-maps__container .map-container{
+        height: 300px;
+    }
+
+    .club-card__info-container{
+        width: 50%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .club-card__info-container .info-col .info{
+        margin: 40px 2px;
+    }
+
+    .club-card__info-container .info-col .info .value{
+        font-size: 1.25rem
+    }
+}
