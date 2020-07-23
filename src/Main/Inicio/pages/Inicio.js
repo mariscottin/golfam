@@ -31,7 +31,7 @@ const Inicio = (props) => {
             .then(response => response.json())
             .then(clubData => {
                 const coord = clubData.club.coordinates;
-                return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lng}&lang=es&units=metric&APPID=60b9e5dce86db6f6f64e9a05c9f861d7`)
+                return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lng}&lang=es&units=metric&APPID=${process.env.REACT_APP_WEATHER_API_KEY}`)
             })
             const weatherData = await weatherResponse.json();
             setWeather({
